@@ -80,6 +80,12 @@ export default function HowToPlay({ onClose }: { onClose: () => void }) {
             <span><kbd>Scroll</kbd> zoom a photograph</span>
           </div>
 
+          <p className="howto__credit">
+            East-room artwork: Johan Christian Dahl, <em>Clouds at Sunset</em> —
+            public domain, via Wikimedia Commons. The gallery, the photographs and
+            every other illustration were drawn for this case.
+          </p>
+
           <div className="sheet__foot">
             <button className="btn btn--primary" onClick={onClose}>
               Back to the case

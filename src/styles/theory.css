@@ -819,3 +819,13 @@
     padding: 1.2rem;
   }
 }
+
+.howto__credit {
+  margin: 1rem 0 0;
+  font-size: 0.68rem;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: var(--ink-4, #8c8073);
+  border-top: 1px solid var(--line, #2a241d);
+  padding-top: 0.7rem;
+}

@@ -64,7 +64,9 @@ The engine never touches React and the components never mutate case data. All vi
 
 ## Art and assets
 
-Every illustration is hand-authored SVG or CSS: five scenes, portraits, the moth brooch, the gallery mark. No remote images, fonts, scripts or analytics. The page works with the network switched off; the only external request is the bundle itself.
+The painting on the east wall is real: **J. C. Dahl, _Clouds at Sunset_**, public domain via Wikimedia Commons, cropped and re-toned for the gallery light. It is bundled locally and credited in `CREDITS.md` (and in How to Play).
+
+Everything else — the five scenes, the portraits, the moth brooch, the gallery mark, the folder, the paper — is hand-authored SVG or CSS. No remote images, fonts, scripts or analytics. The page works with the network switched off; the only external request is the bundle itself.
 
 ## Deployment
 

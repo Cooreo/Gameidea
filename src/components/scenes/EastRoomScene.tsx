@@ -1,3 +1,4 @@
+import lastLightArt from '../../assets/the-last-light.jpg';
 import { FrameCornerNick } from './motifs';
 
 /** Press photograph, 19:12. The painting is on the wall, chip intact. */
@@ -65,6 +66,16 @@ export default function EastRoomScene() {
           </feComponentTransfer>
         </filter>
         <filter id="er-blur"><feGaussianBlur stdDeviation="9" /></filter>
+        <linearGradient id="er-varnish" x1="0" y1="0" x2="0.3" y2="1">
+          <stop offset="0" stopColor="#ffe8b8" stopOpacity="0.14" />
+          <stop offset="0.55" stopColor="#8a5f2a" stopOpacity="0" />
+          <stop offset="1" stopColor="#2a1a0a" stopOpacity="0.3" />
+        </linearGradient>
+        <radialGradient id="er-glass" cx="0.32" cy="0.18" r="0.9">
+          <stop offset="0" stopColor="#fff6de" stopOpacity="0.16" />
+          <stop offset="0.55" stopColor="#fff6de" stopOpacity="0" />
+          <stop offset="1" stopColor="#000" stopOpacity="0.18" />
+        </radialGradient>
         <clipPath id="er-canvas-clip">
           <rect x="352" y="182" width="376" height="262" />
         </clipPath>
@@ -103,42 +114,26 @@ export default function EastRoomScene() {
         <rect x="330" y="160" width="420" height="306" fill="none" stroke="url(#er-gold-inner)" strokeWidth="5" />
         <rect x="342" y="172" width="396" height="282" fill="none" stroke="#5c431f" strokeWidth="3" />
 
-        {/* canvas */}
+        {/* canvas — a real nineteenth-century landscape, lit and varnished */}
         <g clipPath="url(#er-canvas-clip)">
-          <rect x="352" y="182" width="376" height="262" fill="url(#er-sky)" />
-          {/* distant light */}
-          <circle cx="536" cy="322" r="27" fill="#f7e2b0" opacity="0.78" />
-          <circle cx="536" cy="322" r="46" fill="#f3d59b" opacity="0.18" />
-          {/* clouds */}
-          <path d="M360 250c40-16 78-8 112-18s74-16 118 2 66 10 92 2" stroke="#d8cbb0" strokeWidth="7" fill="none" opacity="0.16" strokeLinecap="round" />
-          <path d="M420 292c60-10 110-2 160-8s70-4 100 6" stroke="#e8d7b4" strokeWidth="4" fill="none" opacity="0.18" strokeLinecap="round" />
-          {/* horizon land */}
-          <path d="M352 372c44-6 76 6 118-2s70-12 118-4 88 4 140-6v84H352v-72Z" fill="#5d4a2e" opacity="0.75" />
-          <path d="M352 404c44-4 88 6 140-2s92-8 144 0 66 4 92-2v44H352v-40Z" fill="url(#er-water)" opacity="0.85" />
-          {/* water glints */}
-          <g fill="#f0d49a" opacity="0.62">
-            <rect x="516" y="392" width="46" height="2" rx="1" />
-            <rect x="500" y="401" width="70" height="2" rx="1" />
-            <rect x="524" y="410" width="40" height="1.6" rx="1" />
-            <rect x="470" y="420" width="30" height="1.4" rx="1" opacity="0.6" />
-            <rect x="566" y="424" width="52" height="1.4" rx="1" opacity="0.6" />
-          </g>
-          {/* reeds and far trees */}
-          <g stroke="#3c2f1c" strokeWidth="2.4" fill="none" opacity="0.9">
-            <path d="M388 444c2-30 6-44 10-56m-16 58c0-24 2-36 4-48m22 46c2-22 6-34 12-46" />
-            <path d="M620 442c2-26 4-38 8-50m-18 50c0-22 4-32 8-42m26 42c2-18 6-28 12-38" />
-            <path d="M676 448c2-20 4-30 8-40m-16 40c0-18 4-26 8-34" />
-          </g>
-          {/* ground strokes */}
-          <path d="M352 470c60-8 120 4 190-2s116-4 186 4v-20H352v18Z" fill="#2e2516" opacity="0.5" />
-          <path d="M368 452c40 6 80-2 120 2s90 6 130 0 74-2 110 4" stroke="#c1935a" strokeWidth="1.2" fill="none" opacity="0.28" />
-          {/* craquelure */}
-          <g stroke="#e9d9b6" strokeWidth="0.6" opacity="0.13">
+          <image
+            href={lastLightArt}
+            x="352"
+            y="182"
+            width="376"
+            height="262"
+            preserveAspectRatio="xMidYMid slice"
+          />
+          {/* warm gallery light and the varnish's amber cast */}
+          <rect x="352" y="182" width="376" height="262" fill="url(#er-varnish)" />
+          <rect x="352" y="182" width="376" height="262" fill="#d9a45b" opacity="0.07" />
+          {/* craquelure and dust, kept faint so the paint stays legible */}
+          <g stroke="#f4e6c4" strokeWidth="0.6" opacity="0.08">
             <path d="M392 220l16 16-8 14 20 12" fill="none" />
             <path d="M600 210l-14 18 10 12-18 20" fill="none" />
             <path d="M470 330l12 10-6 12" fill="none" />
           </g>
-          <rect x="352" y="182" width="376" height="262" fill="#d9a45b" opacity="0.08" />
+          <rect x="352" y="182" width="376" height="262" fill="url(#er-glass)" />
         </g>
 
         {/* frame inner shadow */}
