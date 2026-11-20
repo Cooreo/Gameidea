@@ -1,3 +1,4 @@
+import lastLightArt from '../assets/the-last-light.jpg';
 /**
  * Original SVG folder-and-photograph illustration for the main menu.
  * Everything is drawn locally, no image assets or remote fonts.
@@ -93,11 +94,17 @@ export default function MenuArt() {
         <g transform="rotate(3.5 330 400)">
           <rect x="159" y="178" width="348" height="286" fill="url(#ma-photo)" stroke="#9c8a6d" strokeWidth="1" />
           <rect x="181" y="201" width="304" height="224" fill="#2a241c" />
-          {/* painting */}
-          <rect x="205" y="222" width="256" height="182" fill="url(#ma-canvas)" />
-          <path d="M205 350c38-16 70 4 102-10s62-26 94-8c22 12 42 12 60 5v67H205v-54Z" fill="#3c3727" />
-          <circle cx="392" cy="270" r="20" fill="#f0d79c" opacity="0.75" />
-          <path d="M205 222h256v182H205z" fill="url(#ma-hatch)" opacity="0.25" />
+          {/* the painting itself */}
+          <image
+            href={lastLightArt}
+            x="205"
+            y="222"
+            width="256"
+            height="182"
+            preserveAspectRatio="xMidYMid slice"
+          />
+          <rect x="205" y="222" width="256" height="182" fill="#8a5f2a" opacity="0.1" />
+          <path d="M205 222h256v182H205z" fill="url(#ma-hatch)" opacity="0.22" />
           <rect
             x="199"
             y="216"
